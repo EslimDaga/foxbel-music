@@ -32,20 +32,11 @@ const Footer = () => {
 					<FaStepForward />
 				</button>
 			</div>
-			<div className="volume-bar">
-				<button
-					type="range"
-					style={{
-						width: "100px",
-						height: "20px",
-					}}
-				></button>
-				<button
-					style={{
-						width: "18px",
-						height: "42px",
-					}}
-				></button>
+			<div className="volume-bar-widget">
+				<input type="range" min={1} max={800} step={1}></input>
+				<button>
+					<FaVolumeUp />
+				</button>
 			</div>
 		</FooterStyledComponent>
 	);
