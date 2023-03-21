@@ -82,11 +82,39 @@ const FooterStyledComponent = styled.footer`
 		height: 20px;
 	}
 
-	.volume-bar {
+	.volume-bar-widget {
 		display: flex;
 		align-items: center;
 		gap: 40px;
 		padding-right: 32px;
+	}
+
+	.volume-bar-widget input[type="range"] {
+		background-color: #fff;
+		appearance: none;
+		border-radius: 5px;
+		width: 100px;
+		height: 6px;
+	}
+
+	.volume-bar-widget input[type="range"]::-webkit-slider-thumb {
+		appearance: none;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #fff;
+	}
+
+	.volume-bar-widget button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	.volume-bar-widget button svg {
+		color: #fff;
+		width: 18px;
+		height: 42px;
 	}
 `;
 
