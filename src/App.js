@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Aside from "./components/Aside";
+import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 const MainContainer = styled.div`
@@ -7,19 +8,12 @@ const MainContainer = styled.div`
 	height: 100vh;
 `;
 
-const Content = styled.div`
-	width: calc(100% - 330px);
-	overflow: auto;
-`;
-
 const App = () => {
 	return (
 		<>
 			<MainContainer>
 				<Aside />
-				<Content>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				</Content>
+				<Content />
 			</MainContainer>
 			<Footer />
 		</>
