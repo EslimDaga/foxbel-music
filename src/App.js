@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Footer from "./components/Footer";
 
 const Aside = styled.aside`
 	background-color: #662323;
@@ -14,14 +15,6 @@ const MainContainer = styled.div`
 const Content = styled.div`
 	width: calc(100% - 330px);
 	overflow: auto;
-`;
-
-const Footer = styled.footer`
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	height: 100px;
-	background-color: #eb5757;
 `;
 
 const App = () => {
