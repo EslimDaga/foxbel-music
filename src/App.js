@@ -1,11 +1,6 @@
 import styled from "styled-components";
+import Aside from "./components/Aside";
 import Footer from "./components/Footer";
-
-const Aside = styled.aside`
-	background-color: #662323;
-	width: 330px;
-	overflow: auto;
-`;
 
 const MainContainer = styled.div`
 	display: flex;
@@ -21,7 +16,7 @@ const App = () => {
 	return (
 		<>
 			<MainContainer>
-				<Aside></Aside>
+				<Aside />
 				<Content>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</Content>
