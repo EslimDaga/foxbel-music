@@ -41,18 +41,45 @@ const FooterStyledComponent = styled.footer`
 	}
 
 	.control-button-skip-back {
-		width: 36px;
-		height: 36px;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	.control-button-skip-back svg {
+		color: #fff;
+		width: 20px;
+		height: 20px;
 	}
 
 	.control-button-playpause {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(255, 118, 118, 1);
+		border: none;
+		cursor: pointer;
+		border-radius: 50%;
 		width: 60px;
 		height: 60px;
 	}
 
+	.control-button-playpause svg {
+		color: #fff;
+		width: 16px;
+		height: 21px;
+	}
+
 	.control-button-skip-forward {
-		width: 36px;
-		height: 36px;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	.control-button-skip-forward svg {
+		color: #fff;
+		width: 20px;
+		height: 20px;
 	}
 
 	.volume-bar {
