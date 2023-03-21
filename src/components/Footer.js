@@ -1,4 +1,10 @@
 import FooterStyledComponent from "./FooterStyledComponent";
+import {
+	FaStepBackward,
+	FaPlay,
+	FaStepForward,
+	FaVolumeUp,
+} from "react-icons/fa";
 
 const Footer = () => {
 	return (
@@ -16,9 +22,15 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="player-controls">
-				<button className="control-button-skip-back"></button>
-				<button className="control-button-playpause"></button>
-				<button className="control-button-skip-forward"></button>
+				<button className="control-button-skip-back">
+					<FaStepBackward />
+				</button>
+				<button className="control-button-playpause">
+					<FaPlay />
+				</button>
+				<button className="control-button-skip-forward">
+					<FaStepForward />
+				</button>
 			</div>
 			<div className="volume-bar">
 				<button
