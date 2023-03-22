@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
 import { FaEllipsisH, FaPlay, FaSearch, FaUser } from "react-icons/fa";
-import { traks } from "../data/traks";
+import { useEffect, useState } from "react";
+import { getChart } from "../services/deezer";
 import ContentStyledComponent from "./ContentStyledComponent";
 
 const Content = () => {
 	const [chart, setChart] = useState([]);
 
 	useEffect(() => {
-		setChart(traks);
+		getChart().then(response => {
+			const { tracks } = response;
+			setChart(tracks.data);
+		});
 	}, []);
 
 	return (
