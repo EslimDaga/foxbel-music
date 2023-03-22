@@ -1,7 +1,15 @@
+import { useEffect, useState } from "react";
 import { FaEllipsisH, FaPlay, FaSearch, FaUser } from "react-icons/fa";
+import { traks } from "../data/traks";
 import ContentStyledComponent from "./ContentStyledComponent";
 
 const Content = () => {
+	const [chart, setChart] = useState([]);
+
+	useEffect(() => {
+		setChart(traks);
+	}, []);
+
 	return (
 		<ContentStyledComponent>
 			<header>
@@ -44,166 +52,29 @@ const Content = () => {
 				</div>
 				<h1 className="title-results">Resultados</h1>
 				<div className="grid-container">
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
+					{chart.map(track => (
+						<div className="item" key={track.id}>
+							<div className="item-overlay">
+								<img
+									src={track.album.cover_medium}
+									alt={track.title_short}
+									width={160}
+									height={160}
+								/>
+
+								<FaPlay className="item-play" />
+								<FaEllipsisH className="item-actions" />
+							</div>
+							<div className="item-info">
+								<h4>
+									{track.title_short.length > 20
+										? track.title_short.substring(0, 20) + "..."
+										: track.title_short}
+								</h4>
+								<p>{track.album.title}</p>
+							</div>
 						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
-					<div className="item">
-						<div className="item-overlay">
-							<img
-								src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-								alt="album cover"
-								width={160}
-								height={160}
-							/>
-							<FaPlay className="item-play" />
-							<FaEllipsisH className="item-actions" />
-						</div>
-						<div className="item-info">
-							<h4>Adele 21</h4>
-							<p>Lo mejor de Adele</p>
-						</div>
-					</div>
+					))}
 				</div>
 			</section>
 		</ContentStyledComponent>
