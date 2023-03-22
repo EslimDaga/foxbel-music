@@ -143,12 +143,64 @@ const ContentStyledComponent = styled.div`
 		cursor: pointer;
 	}
 
-	section.content-area .title {
+	section.content-area .title-results {
 		padding-top: 40px;
 		padding-bottom: 20px;
 		font-size: 22px;
 		line-height: 28px;
 		color: #e86060;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: 23px;
+		justify-items: center;
+		margin: 0 auto;
+	}
+
+	.item {
+		width: 160px;
+		background-color: transparent;
+	}
+
+	.item-overlay {
+		position: relative;
+	}
+
+	.item-overlay .item-play {
+		position: absolute;
+		margin: auto;
+		inset: 0;
+		color: white;
+		width: 32px;
+		height: 36px;
+	}
+
+	.item-overlay .item-actions {
+		display: inline-block;
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		transform: rotate(90deg);
+		color: white;
+		width: 4;
+		height: 18px;
+	}
+
+	.item-info {
+		padding-top: 8px;
+	}
+
+	.item-info h4 {
+		font-size: 14px;
+		font-weight: 700;
+		color: #555555;
+	}
+
+	.item-info p {
+		font-size: 12px;
+		line-height: 15px;
 	}
 `;
 
