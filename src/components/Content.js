@@ -42,6 +42,7 @@ const Content = () => {
 						</div>
 					</div>
 				</div>
+				<h1 className="title">Resultados</h1>
 			</section>
 		</ContentStyledComponent>
 	);
