@@ -1,10 +1,20 @@
-import { FaEllipsisH, FaPlay, FaSearch, FaUser } from "react-icons/fa";
+import { FaEllipsisH, FaPlay, FaSearch, FaTimes, FaUser } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { getSongs } from "../services/deezer";
 import ContentStyledComponent from "./ContentStyledComponent";
 
 const Content = () => {
 	const [chart, setChart] = useState([]);
+	const [search, setSearch] = useState("");
+
+	const handleSearch = e => {
+		const { value } = e.target;
+		setSearch(value);
+		getSongs(value).then(response => {
+			const { data } = response;
+			setChart(data);
+		});
+	};
 
 	useEffect(() => {
 		getSongs().then(response => {
@@ -17,8 +27,8 @@ const Content = () => {
 		<ContentStyledComponent>
 			<header>
 				<div className="search-widget">
-					<input type="text" placeholder="Buscar" />
-					<FaSearch />
+					<input type="text" placeholder="Buscar" onChange={handleSearch} />
+					{search.length > 0 ? <FaTimes /> : <FaSearch />}
 				</div>
 				<div className="user-widget">
 					<FaUser />
@@ -53,7 +63,9 @@ const Content = () => {
 						</div>
 					</div>
 				</div>
-				<h1 className="title-results">Resultados</h1>
+				<h1 className="title-results">
+					Resultados {search.length > 0 && `para "${search}"`}
+				</h1>
 				<div className="grid-container">
 					{chart.map(track => (
 						<div className="item" key={track.id}>
