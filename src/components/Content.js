@@ -1,15 +1,15 @@
 import { FaEllipsisH, FaPlay, FaSearch, FaUser } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { getChart } from "../services/deezer";
+import { getSongs } from "../services/deezer";
 import ContentStyledComponent from "./ContentStyledComponent";
 
 const Content = () => {
 	const [chart, setChart] = useState([]);
 
 	useEffect(() => {
-		getChart().then(response => {
-			const { tracks } = response;
-			setChart(tracks.data);
+		getSongs().then(response => {
+			const { data } = response;
+			setChart(data);
 		});
 	}, []);
 
@@ -70,11 +70,15 @@ const Content = () => {
 							</div>
 							<div className="item-info">
 								<h4>
-									{track.title_short.length > 20
-										? track.title_short.substring(0, 20) + "..."
+									{track.title_short.length > 18
+										? track.title_short.substring(0, 18) + "..."
 										: track.title_short}
 								</h4>
-								<p>{track.album.title}</p>
+								<p>
+									{track.album.title.length > 20
+										? track.album.title.substring(0, 20) + "..."
+										: track.album.title}
+								</p>
 							</div>
 						</div>
 					))}
