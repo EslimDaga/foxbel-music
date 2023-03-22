@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const ContentStyledComponent = styled.div`
 	width: calc(100% - 330px);
+	height: calc(100% - 100px);
 	overflow: auto;
 
 	header {
@@ -58,6 +59,7 @@ const ContentStyledComponent = styled.div`
 	section.content-area {
 		margin-left: 40px;
 		margin-right: 40px;
+		margin-bottom: 30px;
 	}
 
 	.hero-banner {
