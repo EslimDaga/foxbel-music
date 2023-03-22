@@ -142,6 +142,14 @@ const ContentStyledComponent = styled.div`
 		color: white;
 		cursor: pointer;
 	}
+
+	section.content-area .title {
+		padding-top: 40px;
+		padding-bottom: 20px;
+		font-size: 22px;
+		line-height: 28px;
+		color: #e86060;
+	}
 `;
 
 export default ContentStyledComponent;
