@@ -28,8 +28,50 @@ const App = () => {
 		});
 	};
 
+	const handlePreviusTrack = () => {
+		const index = traks.data.findIndex(track => track.id === currentTrack.id);
+		if (index > 0) {
+			audio.pause();
+
+			setCurrentTrack(traks.data[index - 1]);
+
+			const newAudio = new Audio(traks.data[index - 1].preview);
+			setAudio(newAudio);
+			newAudio.play();
+		} else {
+			audio.pause();
+
+			setCurrentTrack(traks.data[traks.data.length - 1]);
+
+			const newAudio = new Audio(traks.data[traks.data.length - 1].preview);
+			setAudio(newAudio);
+			newAudio.play();
+		}
+	};
+
 	const handlePlay = () => {
 		setIsPlaying(!isPlaying);
+	};
+
+	const handleNextTrack = () => {
+		const index = traks.data.findIndex(track => track.id === currentTrack.id);
+		if (index < traks.data.length - 1) {
+			audio.pause();
+
+			setCurrentTrack(traks.data[index + 1]);
+
+			const newAudio = new Audio(traks.data[index + 1].preview);
+			setAudio(newAudio);
+			newAudio.play();
+		} else {
+			audio.pause();
+
+			setCurrentTrack(traks.data[0]);
+
+			const newAudio = new Audio(traks.data[0].preview);
+			setAudio(newAudio);
+			newAudio.play();
+		}
 	};
 
 	const handleCurrentTrack = track => {
@@ -126,6 +168,8 @@ const App = () => {
 			<Footer
 				currentTrack={currentTrack}
 				isPlaying={isPlaying}
+				handlePreviusTrack={handlePreviusTrack}
+				handleNextTrack={handleNextTrack}
 				handlePlay={handlePlay}
 				handleVolume={handleVolume}
 				handleMuteSound={handleMuteSound}
