@@ -47,7 +47,7 @@ const Footer = ({
 				<button
 					className="control-button-playpause"
 					onClick={() => {
-						handlePlay();
+						currentTrack && handlePlay();
 					}}
 				>
 					{isPlaying ? <FaPause /> : <FaPlay />}
