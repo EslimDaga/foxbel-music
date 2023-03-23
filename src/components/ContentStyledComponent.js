@@ -5,14 +5,77 @@ const ContentStyledComponent = styled.div`
 	height: calc(100% - 100px);
 	overflow: auto;
 
+	@media (max-width: 768px) {
+		width: 100%;
+
+		header {
+			gap: 20px;
+			padding: 20px 20px;
+		}
+
+		.user-widget p {
+			display: none;
+		}
+
+		section.content-area {
+			padding: 20px 20px;
+		}
+
+		.hero-banner img {
+			display: none;
+		}
+
+		.hero-banner .content {
+			height: 100%;
+			padding-bottom: 20px;
+		}
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1200px) {
+		width: calc(100% - 330px);
+
+		header {
+			gap: 20px;
+			padding: 20px 20px;
+		}
+
+		.user-widget p {
+			display: none;
+		}
+
+		section.content-area {
+			padding: 20px 20px;
+		}
+
+		.hero-banner img {
+			display: none;
+		}
+
+		.hero-banner .content {
+			height: 100%;
+			padding-bottom: 20px;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		header {
+			gap: 20px;
+			padding: 30px 40px;
+		}
+
+		section.content-area {
+			padding: 30px 40px;
+		}
+
+		.hero-banner .content {
+			height: 250px;
+		}
+	}
+
 	header {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding-top: 30px;
-		padding-right: 40px;
-		padding-bottom: 40px;
-		padding-left: 40px;
 	}
 
 	.search-widget {
@@ -57,9 +120,7 @@ const ContentStyledComponent = styled.div`
 	}
 
 	section.content-area {
-		margin-left: 40px;
-		margin-right: 40px;
-		margin-bottom: 30px;
+		display: block;
 	}
 
 	.hero-banner {
@@ -72,7 +133,6 @@ const ContentStyledComponent = styled.div`
 		background-size: cover;
 		background-position: center;
 		width: 100%;
-		height: 250px;
 		padding-left: 30px;
 	}
 
