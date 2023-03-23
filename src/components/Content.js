@@ -31,12 +31,15 @@ const Content = ({
 			</header>
 			<section className="content-area">
 				<div className="hero-banner">
-					<img
-						src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
-						alt="album cover"
-						width={250}
-						height={250}
-					/>
+					<div className="overlay">
+						<img
+							src="https://e-cdns-images.dzcdn.net/images/artist/afd69289900a0c8ba42f301fe5c1fd60/250x250-000000-80-0-0.jpg"
+							alt="album cover"
+							width={250}
+							height={250}
+						/>
+						<FaPlay className="item-play" />
+					</div>
 					<div className="content">
 						<div className="title">
 							<h1>Adele 21</h1>
