@@ -5,6 +5,10 @@ const AsideStyledComponent = styled.aside`
 	width: 330px;
 	overflow: auto;
 
+	@media (max-width: 768px) {
+		display: none;
+	}
+
 	.logo {
 		margin-top: 50px;
 		margin-bottom: 30px;
