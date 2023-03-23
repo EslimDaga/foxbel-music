@@ -15,6 +15,7 @@ const Footer = ({
 	handleVolume,
 	volume,
 	handlePlay,
+	handleMuteSound,
 }) => {
 	return (
 		<FooterStyledComponent>
@@ -65,11 +66,11 @@ const Footer = ({
 				/>
 				<button>
 					{volume < 1 ? (
-						<FaVolumeMute />
+						<FaVolumeMute onClick={handleMuteSound} />
 					) : volume > 50 ? (
-						<FaVolumeUp />
+						<FaVolumeUp onClick={handleMuteSound} />
 					) : (
-						<FaVolumeDown />
+						<FaVolumeDown onClick={handleMuteSound} />
 					)}
 				</button>
 			</div>
