@@ -1,28 +1,22 @@
-import { FaEllipsisH, FaPlay, FaSearch, FaTimes, FaUser } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { getSongs } from "../services/deezer";
+import {
+	FaEllipsisH,
+	FaPause,
+	FaPlay,
+	FaSearch,
+	FaTimes,
+	FaUser,
+} from "react-icons/fa";
 import ContentStyledComponent from "./ContentStyledComponent";
 
-const Content = () => {
-	const [chart, setChart] = useState([]);
-	const [search, setSearch] = useState("");
-
-	const handleSearch = e => {
-		const { value } = e.target;
-		setSearch(value);
-		getSongs(value).then(response => {
-			const { data } = response;
-			setChart(data);
-		});
-	};
-
-	useEffect(() => {
-		getSongs().then(response => {
-			const { data } = response;
-			setChart(data);
-		});
-	}, []);
-
+const Content = ({
+	traks,
+	search,
+	handleSearch,
+	handlePlay,
+	isPlaying,
+	handleCurrentTrack,
+	currentTrack,
+}) => {
 	return (
 		<ContentStyledComponent>
 			<header>
@@ -66,35 +60,57 @@ const Content = () => {
 				<h1 className="title-results">
 					Resultados {search.length > 0 && `para "${search}"`}
 				</h1>
-				<div className="grid-container">
-					{chart.map(track => (
-						<div className="item" key={track.id}>
-							<div className="item-overlay">
-								<img
-									src={track.album.cover_medium}
-									alt={track.title_short}
-									width={160}
-									height={160}
-								/>
 
-								<FaPlay className="item-play" />
-								<FaEllipsisH className="item-actions" />
+				{traks.total > 0 && (
+					<div className="grid-container">
+						{traks.data.map((track, index) => (
+							<div className="item" key={track.id}>
+								<div className="item-overlay">
+									<img
+										src={track.album.cover_medium}
+										alt={track.title_short}
+										width={160}
+										height={160}
+									/>
+									{isPlaying && currentTrack.id === track.id ? (
+										<FaPause
+											className="item-play"
+											onClick={() => {
+												handlePlay();
+											}}
+										/>
+									) : (
+										<FaPlay
+											className="item-play"
+											onClick={() => {
+												handlePlay();
+												handleCurrentTrack(track);
+											}}
+										/>
+									)}
+									<FaEllipsisH className="item-actions" />
+								</div>
+								<div className="item-info">
+									<h4>
+										{track.title_short.length > 18
+											? track.title_short.substring(0, 18) + "..."
+											: track.title_short}
+									</h4>
+									<p>
+										{track.album.title.length > 20
+											? track.album.title.substring(0, 20) + "..."
+											: track.album.title}
+									</p>
+								</div>
 							</div>
-							<div className="item-info">
-								<h4>
-									{track.title_short.length > 18
-										? track.title_short.substring(0, 18) + "..."
-										: track.title_short}
-								</h4>
-								<p>
-									{track.album.title.length > 20
-										? track.album.title.substring(0, 20) + "..."
-										: track.album.title}
-								</p>
-							</div>
-						</div>
-					))}
-				</div>
+						))}
+					</div>
+				)}
+				{traks.total === 0 && (
+					<div className="no-results">
+						<h1>No se encontraron resultados</h1>
+					</div>
+				)}
 			</section>
 		</ContentStyledComponent>
 	);
