@@ -41,6 +41,14 @@ const App = () => {
 		setVolume(value);
 	};
 
+	const handleMuteSound = () => {
+		if (volume > 0) {
+			setVolume(0);
+		} else {
+			setVolume(100);
+		}
+	};
+
 	useEffect(() => {
 		getSongs().then(response => {
 			setTraks(response);
@@ -120,6 +128,7 @@ const App = () => {
 				isPlaying={isPlaying}
 				handlePlay={handlePlay}
 				handleVolume={handleVolume}
+				handleMuteSound={handleMuteSound}
 				volume={volume}
 			/>
 		</>
