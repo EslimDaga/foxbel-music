@@ -15,6 +15,8 @@ const Footer = ({
 	handleVolume,
 	volume,
 	handlePlay,
+	handlePreviusTrack,
+	handleNextTrack,
 	handleMuteSound,
 }) => {
 	return (
@@ -41,7 +43,10 @@ const Footer = ({
 				</div>
 			</div>
 			<div className="player-controls">
-				<button className="control-button-skip-back">
+				<button
+					onClick={() => currentTrack && isPlaying && handlePreviusTrack()}
+					className="control-button-skip-back"
+				>
 					<FaStepBackward />
 				</button>
 				<button
@@ -52,7 +57,10 @@ const Footer = ({
 				>
 					{isPlaying ? <FaPause /> : <FaPlay />}
 				</button>
-				<button className="control-button-skip-forward">
+				<button
+					onClick={() => currentTrack && isPlaying && handleNextTrack()}
+					className="control-button-skip-forward"
+				>
 					<FaStepForward />
 				</button>
 			</div>
