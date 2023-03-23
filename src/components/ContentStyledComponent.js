@@ -128,6 +128,22 @@ const ContentStyledComponent = styled.div`
 		align-items: center;
 	}
 
+	.hero-banner .overlay {
+		width: 250px;
+		height: 250px;
+		position: relative;
+	}
+
+	.hero-banner .overlay .item-play {
+		cursor: pointer;
+		position: absolute;
+		margin: auto;
+		color: white;
+		inset: 0;
+		width: 63px;
+		height: 72px;
+	}
+
 	.hero-banner .content {
 		background-image: url(images/adele-wallpaper.png);
 		background-size: cover;
