@@ -171,6 +171,7 @@ const ContentStyledComponent = styled.div`
 	}
 
 	.item-overlay .item-play {
+		cursor: pointer;
 		position: absolute;
 		margin: auto;
 		inset: 0;
