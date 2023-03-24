@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Proyecto de búsqueda y reproducción de canciones
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Este proyecto tiene como objetivo crear una aplicación que ayude a los usuarios a buscar y reproducir canciones utilizando la API Rest de Deezer. La aplicación debe permitir la búsqueda de canciones por álbum o nombre de la canción, reproducir las canciones y permitir la modulación de volumen.
 
-In the project directory, you can run:
+## Requisitos de usuario
 
-### `npm start`
+- Como usuario quiero un buscador de canciones por álbum o nombre de la canción para que pueda listar fácilmente mis canciones (la primera canción de la lista).
+- Como usuario quiero un reproductor de música para que pueda escuchar las canciones que estén listadas por el buscador.
+- Como usuario quiero un modulador de volumen para que pueda subir o bajar el volumen de la canción que estoy escuchando.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologías utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este proyecto utiliza las siguientes herramientas y tecnologías:
 
-### `npm test`
+- React.js para construir la aplicación web
+- axios para realizar peticiones HTTP a la API de Deezer
+- styled-components para escribir los archivos CSS y crear componentes reutilizables
+- react-icons para incluir iconos en la aplicación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instrucciones de instalación
 
-### `npm run build`
+1. Clone el repositorio a su máquina local <br/>
+2. Instale las dependencias utilizando el comando npm install <br />
+3. Ejecute la aplicación utilizando el comando npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementación y despliegue
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La aplicación ha sido desplegada en Vercel y se encuentra disponible en el siguiente enlace:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**URL de la aplicación desplegada:** https://foxbel-music-livid.vercel.app/
 
-### `npm run eject`
+Para desplegar tu propia versión de la aplicación en Vercel, utiliza el siguiente botón:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[![Desplegar en Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/eslimdata/foxbel-music/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instrucciones de uso
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Ingrese el nombre de un álbum o canción en el cuadro de búsqueda y presione enter <br />
+2. Se mostrará una lista de canciones relacionadas con la búsqueda realizada <br />
+3. Haga clic en una canción para reproducirla <br />
+4. Utilice el modulador de volumen para ajustar el volumen de la canción <br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Créditos
 
-## Learn More
+Este proyecto utiliza la API Rest de Deezer para obtener información y reproducción de canciones. También utiliza las siguientes bibliotecas de código abierto:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React.js
+- axios
+- styled-components
+- react-icons
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Licencia
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto está bajo la Licencia MIT.
