@@ -101,6 +101,10 @@ const ContentStyledComponent = styled.div`
 		background-color: transparent;
 	}
 
+	.search-widget .reset-search {
+		cursor: pointer;
+	}
+
 	.search-widget svg {
 		color: #bdbdbd;
 	}
