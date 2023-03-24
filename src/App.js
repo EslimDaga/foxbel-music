@@ -122,20 +122,24 @@ const App = () => {
 			}
 		}
 
+		if (!isPlaying && currentTrack?.preview !== audio?.src) {
+			if (audio) {
+				audio.pause();
+			}
+
+			const newAudio = new Audio(currentTrack.preview);
+			setAudio(newAudio);
+			newAudio.play();
+
+			setIsPlaying(true);
+		}
+
 		return () => {
 			if (audio) {
 				audio.pause();
 			}
 		};
-	}, [isPlaying]);
-
-	useEffect(() => {
-		if (!isPlaying && currentTrack) {
-			const newAudio = new Audio(currentTrack.preview);
-			setAudio(newAudio);
-			setIsPlaying(true);
-		}
-	}, [currentTrack]);
+	}, [isPlaying, currentTrack, audio]);
 
 	useEffect(() => {
 		if (audio) {
