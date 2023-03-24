@@ -28,6 +28,13 @@ const App = () => {
 		});
 	};
 
+	const handleResetSearch = () => {
+		setSearch("");
+		getSongs().then(response => {
+			setTraks(response);
+		});
+	};
+
 	const handlePreviusTrack = () => {
 		const index = traks.data.findIndex(track => track.id === currentTrack.id);
 		if (index > 0) {
@@ -164,8 +171,9 @@ const App = () => {
 					search={search}
 					handleSearch={handleSearch}
 					handlePlay={handlePlay}
-					isPlaying={isPlaying}
 					handleCurrentTrack={handleCurrentTrack}
+					handleResetSearch={handleResetSearch}
+					isPlaying={isPlaying}
 					currentTrack={currentTrack}
 				/>
 			</MainContainer>
