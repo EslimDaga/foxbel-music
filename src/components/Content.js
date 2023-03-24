@@ -13,16 +13,26 @@ const Content = ({
 	search,
 	handleSearch,
 	handlePlay,
-	isPlaying,
 	handleCurrentTrack,
+	handleResetSearch,
+	isPlaying,
 	currentTrack,
 }) => {
 	return (
 		<ContentStyledComponent>
 			<header>
 				<div className="search-widget">
-					<input type="text" placeholder="Buscar" onChange={handleSearch} />
-					{search.length > 0 ? <FaTimes /> : <FaSearch />}
+					<input
+						type="text"
+						placeholder="Buscar"
+						onChange={handleSearch}
+						value={search}
+					/>
+					{search.length > 0 ? (
+						<FaTimes onClick={handleResetSearch} className="reset-search" />
+					) : (
+						<FaSearch />
+					)}
 				</div>
 				<div className="user-widget">
 					<FaUser />
