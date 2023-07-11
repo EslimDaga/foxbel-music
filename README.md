@@ -1,4 +1,4 @@
-# Proyecto de búsqueda y reproducción de canciones
+# 🚀 Proyecto de búsqueda y reproducción de canciones
 
 Este proyecto fue iniciado con [Create React App](https://github.com/facebook/create-react-app).
 
